@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(212, 230, 255);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 80%;
+  flex-direction: column;
+}
+
+.bottle {
+  width: 150px;
+  height: 280px;
+  border: 4px solid rgb(0, 0, 156);
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  overflow: hidden;
+  position: relative;
+  background-color: white;
+}
+
+.bottle .drank,
+.bottle .remaining {
+  position: absolute;
+  transition: all 0.4s cubic-bezier(0.68, -0.35, 0.35, 1.3);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottle .remaining div {
+  font-size: 14px;
+  text-align: center;
+}
+
+.bottle .remaining div span {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(3, 3, 102);
+}
+
+.bottle .drank {
+  font-size: larger;
+  font-family: consolas, monospace;
+}
+
+.bottle .drank {
+  background-color: skyblue;
+  bottom: 0;
+}
+
+.bottle .remaining {
+  top: 0;
+}
+
+.container.state-0 .remaining {
+  height: 100%;
+}
+.container.state-0 .drank {
+  height: 0%;
+  visibility: hidden;
+}
+
+.container.state-1 .remaining {
+  height: 87.5%;
+}
+.container.state-1 .drank {
+  height: 12.5%;
+  visibility: visible;
+}
+
+.container.state-2 .remaining {
+  height: 75%;
+}
+.container.state-2 .drank {
+  height: 25%;
+}
+
+.container.state-3 .remaining {
+  height: 62.5%;
+}
+.container.state-3 .drank {
+  height: 37.5%;
+}
+
+.container.state-4 .remaining {
+  height: 50%;
+}
+.container.state-4 .drank {
+  height: 50%;
+}
+
+.container.state-5 .remaining {
+  height: 37.5%;
+}
+.container.state-5 .drank {
+  height: 62.5%;
+}
+
+.container.state-6 .remaining {
+  height: 25%;
+}
+.container.state-6 .drank {
+  height: 75%;
+}
+
+.container.state-7 .remaining {
+  height: 12.5%;
+}
+.container.state-7 .drank {
+  height: 87.5%;
+}
+
+.container.state-8 .remaining {
+  height: 0%;
+  visibility: hidden;
+}
+.container.state-8 .drank {
+  height: 100%;
+}
+
+.glasses {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.glass {
+  border: 3px solid rgb(1, 1, 154);
+  margin: 2px;
+  height: 100px;
+  width: 50px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background-color: white;
+  transition: background-color 0.3s linear;
+  cursor: pointer;
+  user-select: none;
+}
+
+.glass.blue {
+  background-color: skyblue;
+}
